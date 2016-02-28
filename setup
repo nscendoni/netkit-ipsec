@@ -1,0 +1,26 @@
+http://lartc.org/howto/index.html
+http://www.lartc.org/lartc.html
+http://www.ipsec-howto.org
+http://www.ipsec-howto.org/x304.html
+
+as300r1: 200.1.0.2 A
+as1r1: 11.0.0.24 B
+
+sed s/192.168.1.100/200.1.0.2/g
+sed s/192.168.2.100/11.0.0.24/g
+
+$ # 128 Bit long key
+$ dd if=/dev/random count=16 bs=1| xxd -ps
+16+0 Records ein
+16+0 Records aus
+cd0456eff95c5529ea9e918043e19cbe
+
+$ # 192 Bit long key
+$ dd if=/dev/random count=24 bs=1| xxd -ps
+24+0 Records ein
+24+0 Records aus
+9d6c4a8275ab12fbfdcaf01f0ba9dcfb5f424c878e97f888
+
+# setkey -D
+# setkey -DP
+	
